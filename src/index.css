@@ -1,13 +1,403 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --border: 2px solid #ebf0f5;
+  --blue: #142683;
+  --progress-width: ;
+  --progress-bar-color: ;
+}
+
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.border {
+  border: var(--border);
+}
+
+.header {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border);
+  padding: 0 1rem;
+}
+
+.header div {
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  padding: 2rem 2rem 2rem 0;
+  border-right: var(--border);
+  max-width: 15vw;
+}
+
+.sidebar a {
+  border: 0;
+  font-size: 18px;
+  padding: 10px 30px;
+  border-radius: 0 30px 30px 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebar a img{
+  padding: 5px;
+}
+
+.select {
+  background-color: #dde3ff;
+  color: #445ee2;
+}
+
+.button-1 {
+  background: var(--blue);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update-card {
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+
+.update-card div span {
+  padding: 0.5rem;
+  justify-content: space-evenly;
+}
+
+.main {
+  width: 100%;
+  padding: 2rem;
+}
+
+.main-l {
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.main-r{
+  padding-left: 1rem;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(47, 47, 47, 0.5);
+}
+
+.modal {
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  width: 50%;
+  background: white;
+  border-radius: 10px;
+  padding: 3rem;
+}
+
+.modal-content div {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputs div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs div input {
+  padding: 1rem;
+
+  border: 2px solid #142683;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #142683;
+  font-weight: 600;
+}
+
+.modal-buttons {
+  text-align: end;
+}
+
+.modal-buttons button:nth-child(1) {
+  background: white;
+  border: 2px solid #142683;
+  padding: 1rem;
+  font-size: 20px;
+  color: #142683;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.modal-buttons button:nth-child(2) {
+  background: #142683;
+  padding: 1rem;
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-card {
+  align-items: center;
+}
+
+.icon {
+  background-color: #ebf0f5;
+  padding: 1.5rem;
+  border-radius: 100%;
+  font-size: 20px;
+}
+
+.stats-card span {
+  padding: 1rem;
+}
+
+.stats-box {
+  justify-content: space-between;
+}
+
+.stats {
+  padding: 2rem;
+  border-radius: 20px;
+  margin: 2rem 0 2rem 0 ;
+}
+
+.progress {
+  background: rgba(135, 55, 55, 0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+}
+
+.progress-value {
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #ffffff;
+  border-radius: 100px;
+  background: var(--progress-bar-color);
+  height: 30px;
+  width: 0;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: var(--progress-width);
+  }
+}
+
+.progress-box {
+  align-items: center;
+}
+
+.progress-box div {
+  height: 10px;
+  width: 200px;
+}
+
+.progress-box h3 {
+  padding-left: 4rem;
+}
+
+.syllabus {
+  padding: 2rem;
+  border-radius: 20px;
+}
+.syllabus h3:nth-child(1) {
+  margin-bottom: 2rem;
+}
+
+@keyframes progress {
+  0% {
+    --percentage: 0;
+  }
+  100% {
+    --percentage: var(--value);
+  }
+}
+
+@property --percentage {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar"] {
+  --percentage: var(--value);
+  --primary: #438af6;
+  --secondary: #ecf3fe;
+  --size: 300px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+[role="progressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    var(--primary) calc(var(--percentage) * 1%),
+    var(--secondary) 0
+  );
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 50%, #000 0);
+  -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: "🎯";
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
+.pie {
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.pie-box {
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.graphs {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+}
+
+.graphs-2 {
+  width: 100%;
+  height: 100%;
+
+}
+
+.dot-graph {
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.all-graphs{
+  width: 99%;
+  height: 100vh;
+  position: relative;
+  border-radius: 20px;
+}
+
+.tooltip{
+  background-color: #142683;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.tooltip h1{
+  color: white;
+}
+
+.tooltip p{
+ color: gray;
+}
+
+.graph-text p span:nth-child(1){
+  font-weight: 700;
+}
+
+.graph-text{
+  justify-content: space-between;
+  align-items: end;
+}
+
+.graph-text p{
+  color: gray;
+}
+
+.graph-text-box{
+  padding: 2rem;
+}
+.main-l p:nth-child(0){
+  padding: 1rem 0 1rem 0;
+}
+
+.syllabus{
+  margin: 1.5rem 0 2rem 0;
+}
+
+.main{
+  overflow-y: scroll;
+  height: 90vh;
 }
